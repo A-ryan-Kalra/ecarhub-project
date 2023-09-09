@@ -6,12 +6,13 @@ function CustomButton({
   title,
   containerStyles,
   handleClick,
+  btnType,
 }: CustomButtonProps) {
   return (
     <button
       disabled={false}
-      type={`button`}
-      className={`custom-btn ${containerStyles}`}
+      type={btnType || `button`}
+      className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
       onClick={handleClick}
     >
       <span className={`flex-1`}>{title}</span>

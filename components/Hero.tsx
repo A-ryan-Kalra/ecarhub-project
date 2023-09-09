@@ -22,8 +22,8 @@ function Hero() {
         />
       </div>
 
-      <div className="xl:flex-[1.5] flex  justify-end items-end w-full  xl:h-screen">
-        <div className="relative  xl:w-full  w-[90%] xl:h-full h-[590px]  z-0">
+      <div className="xl:flex-[1.5] flex  justify-end items-end w-full   xl:h-screen">
+        <div className="relative  xl:w-full w-[90%] xl:h-full h-[590px]  z-0">
           <Image src="/hero.png" alt="hero" className="object-contain " fill />
         </div>
 
