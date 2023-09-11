@@ -19,10 +19,10 @@ const SearchManufacturer = ({
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
-
+  // console.log(manufacturer);
   return (
     <div className=" flex-1 max-sm:w-full flex justify-start items-center">
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className={"absolute top-[14px]"}>
             <Image
@@ -58,7 +58,24 @@ const SearchManufacturer = ({
                     active ? "bg-primary-blue text-white" : "text-gray-900"
                   }`}
                 >
-                  {item}
+                  {({ selected, active }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-bold" : "font-normal"
+                        }`}
+                      >
+                        {item}
+                      </span>
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3${
+                            active ? "text-white" : "text-teal-600"
+                          }`}
+                        ></span>
+                      ) : null}
+                    </>
+                  )}
                 </Combobox.Option>
               ))}
             </Combobox.Options>
