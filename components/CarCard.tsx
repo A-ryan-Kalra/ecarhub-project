@@ -7,7 +7,7 @@ import { useState } from "react";
 import CarDetails from "./CarDetails";
 
 export const CarCard = ({ car }: CarCardProps) => {
-  console.log(generateCarImageUrl(car));
+  // console.log(generateCarImageUrl(car));
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carRent: number = Number(calculateCarRent(city_mpg, year));
   const [isOpen, setIsOpen] = useState(false);

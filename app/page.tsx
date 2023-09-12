@@ -5,8 +5,14 @@ import { SearchBar } from "@/components/SearchBar";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 
-export default async function Home() {
-  const cars = await fetchCars();
+export default async function Home({ searchParams }) {
+  const cars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.mode || "",
+  });
   const isDataEmpty = !Array.isArray(cars) || cars.length < 1 || !cars;
   // console.log(isDataEmpty);
   // const date = new Date().getFullYear();

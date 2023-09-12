@@ -7,7 +7,7 @@
 //   },
 // };
 
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
 // try {
 //   const response = await fetch(url, options);
@@ -17,13 +17,14 @@ import { CarProps } from "@/types";
 //   console.error(error);
 // }
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
   const headers = {
     "X-RapidAPI-Key": "3012108611msh4192f0935312ef3p17adf5jsn766fbb493b95",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
+  const { manufacturer, fuel, limit, model, year } = filters;
   const response = await fetch(
-    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=aventador",
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
     {
       headers: headers,
     }

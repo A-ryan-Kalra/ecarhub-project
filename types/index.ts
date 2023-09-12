@@ -34,3 +34,11 @@ export type CarProps = {
 export interface CarCardProps {
   car: CarProps;
 }
+
+export interface FilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
