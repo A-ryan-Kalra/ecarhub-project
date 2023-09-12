@@ -34,11 +34,28 @@ export type CarProps = {
 export interface CarCardProps {
   car: CarProps;
 }
-
+export interface HomeProps {
+  searchParams: FilterProps;
+}
 export interface FilterProps {
   manufacturer: string;
   year: number;
   fuel: string;
   limit: number;
   model: string;
+}
+
+export interface OptionProps {
+  title: String;
+  value: string;
+}
+
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
+}
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
 }

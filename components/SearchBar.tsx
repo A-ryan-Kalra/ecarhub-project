@@ -48,9 +48,9 @@ export const SearchBar = () => {
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}`;
-    router.push(newPathname);
-    console.log(window.location.search);
-    console.log(searchParams);
+    router.push(newPathname, { scroll: false });
+    // console.log(window.location.search);
+    // console.log(searchParams);
   };
 
   return (

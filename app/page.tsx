@@ -1,22 +1,27 @@
+// "use client";
 import { CarCard } from "@/components/CarCard";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import { SearchBar } from "@/components/SearchBar";
+import ShowMore from "@/components/ShowMore";
+import { fuels, yearsOfProduction } from "@/constants";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: HomeProps) {
   const cars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
+    year: searchParams.year || 2023,
     fuel: searchParams.fuel || "",
     limit: searchParams.limit || 10,
-    model: searchParams.mode || "",
+    model: searchParams.model || "",
   });
+
   const isDataEmpty = !Array.isArray(cars) || cars.length < 1 || !cars;
   // console.log(isDataEmpty);
   // const date = new Date().getFullYear();
-  // console.log(date);
+  // console.log(cars);
 
   return (
     <main className="overflow-hidden">
@@ -34,18 +39,22 @@ export default async function Home({ searchParams }) {
           <SearchBar />
 
           <div className="flex justify-start flex-wrap items-center gap-2">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
 
         {!isDataEmpty ? (
           <section>
             <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-              {cars.map((car, index) => (
+              {cars?.map((car, index) => (
                 <CarCard key={index} car={car} />
               ))}
             </div>
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > cars.length}
+            />
           </section>
         ) : (
           <div className="mt-16 flex justify-center items-center flex-col gap-">
