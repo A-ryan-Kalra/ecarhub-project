@@ -6,12 +6,12 @@ import { updateSearchParams } from "@/utils";
 
 const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
   const router = useRouter();
-  console.log(pageNumber);
-  console.log(isNext);
+  // console.log(pageNumber);
+  // console.log(isNext);
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10;
     const newPathName = updateSearchParams("limit", String(newLimit));
-    console.log(newPathName);
+    // console.log(newPathName);
     router.push(newPathName, { scroll: false });
   };
 
