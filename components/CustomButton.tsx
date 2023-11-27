@@ -15,7 +15,7 @@ function CustomButton({
     <button
       disabled={false}
       type={btnType || `button`}
-      className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
+      className={`flex flex-row relative active:scale-105 justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
       onClick={handleClick}
     >
       <span className={`${textStyles}flex-1`}>{title}</span>
