@@ -32,7 +32,7 @@ function Hero() {
           />
         </div>
 
-        <div className="absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg- bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden bg-gradient-to-r from-zinc-200 shadow-lg  to-black -skew-x-12 -skew-y-3"></div>
+        <div className="absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg- bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden bg-gradient-to-r from-red-400 shadow-lg  to-yellow-300 -skew-x-12 -skew-y-3"></div>
       </div>
     </div>
   );
