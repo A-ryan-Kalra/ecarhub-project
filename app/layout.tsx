@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { RecoilRoot } from "recoil";
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "e-CarHub",
   description: "Discover the best cars in the world",
 };
 
