@@ -12,7 +12,7 @@ function Hero() {
           Find, book, or rent a car -Hassle-free!
         </h1>
         <p className="text-[25px] font-light">
-          Streamline your car rental experience with our effortless booking
+          Make your car rental experience easy with our effortless booking
           experience.
         </p>
         <CustomButton
