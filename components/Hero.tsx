@@ -15,6 +15,10 @@ function Hero() {
           Make your car rental experience easy with our effortless booking
           experience.
         </p>
+        <p className="text-[25px] font-light">
+          Make your car rental experience easy with our effortless booking
+          experience.
+        </p>
         <CustomButton
           title={"Explore Cars"}
           containerStyles="bg-[#3465FC] p-2 text-white rounded-full mt-10"
